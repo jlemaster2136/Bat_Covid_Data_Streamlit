@@ -48,7 +48,7 @@ def by_virus_genus_and_filter(dataset, genus, filter):
 
 st.title('Coronavirus Prevalence in Bats')
 
-tab1, tab2, tab3 = st.tabs(["Virus Genus Prevalance", "About", "References"])
+tab1, tab2, tab3 = st.tabs(["Data Visualization", "About", "References"])
 
 with tab1:
     option = st.selectbox(
@@ -72,7 +72,6 @@ with tab1:
             fig = go.Figure()
             for i in range(len(genus_list)):
                 data_genus = data[(data['Virus genus']==genus_list[i])]
-                print(genus_list[i])
                 x = data_genus[by]
                 y = data_genus['proportion']
                 y_error = data_genus['prop_error']
