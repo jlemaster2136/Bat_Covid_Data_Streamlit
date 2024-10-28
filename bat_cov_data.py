@@ -21,7 +21,7 @@ color_scheme = ['lightgreen', 'skyblue']
 
 
 def by_virus_genus_and_filter(dataset, genus, filter):
-    if genus == 'Compare them!':
+    if genus == 'Compare':
         if filter in ['Year', 'Sample tissue']:
             dataset = dataset.groupby([filter, 'Virus genus']).sum()
         else:
@@ -33,7 +33,7 @@ def by_virus_genus_and_filter(dataset, genus, filter):
             dataset = dataset[(dataset['keep'] == True)]
             dataset = dataset.drop('keep', axis=1)
             dataset = dataset.groupby([filter, 'Virus genus']).sum()
-    elif genus == 'All':
+    elif genus == 'Any':
         dataset = dataset.groupby(filter).sum()
     else:
         dataset = dataset[(dataset['Virus genus']==genus.lower())]
@@ -53,7 +53,7 @@ tab1, tab2, tab3 = st.tabs(["Virus Genus Prevalance", "About", "References"])
 with tab1:
     option = st.selectbox(
         "Virus genus:",
-        ("Alphacoronavirus", "Betacoronavirus", 'Compare them!', 'All'),
+        ("Alphacoronavirus", "Betacoronavirus", 'Compare', 'Any'),
         index=None,
         placeholder="Select genus",
     )
@@ -67,7 +67,7 @@ with tab1:
 
 
     if st.button('Generate Chart'):
-        if option == 'Compare them!':
+        if option == 'Compare':
             data = by_virus_genus_and_filter(data, option, by)[['Virus genus', by, 'proportion', 'prop_error', '#']]
             fig = go.Figure()
             for i in range(len(genus_list)):
