@@ -128,7 +128,7 @@ with tab1:
                 )
 
             # Display in Streamlit
-            st.plotly_chart(fig)
+            st.plotly_chart(fig, use_container_width=True)
         else:
             #If not for comparision, and just singular genus or any analysis.    
             data = by_virus_genus_and_filter(data, option, by)[[by, 'proportion', 'prop_error', '#']]
@@ -163,7 +163,7 @@ with tab1:
                 )
 
             #Display graph. 
-            st.plotly_chart(fig)
+            st.plotly_chart(fig, use_container_width=True)
         
 
 
