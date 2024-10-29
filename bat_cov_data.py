@@ -4,7 +4,7 @@ import numpy as np
 import plotly.graph_objects as go
 
 
-data = pd.read_csv('/workspaces/codespaces-blank/exported-table.csv')
+data = pd.read_csv('exported-table.csv')
 
 #Generate Separate Columns for Genus and species
 data[['Bat genus', 'Bat species']] = data.pop('Bat species').str.split(' ', n=1, expand=True)
