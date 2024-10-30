@@ -109,7 +109,7 @@ with tab1:
                         name=genus_list[i],
                         text=data_genus['#'], 
                         hovertemplate=(
-                            "{by}: %{x}<br>"      
+                            f"{by}"": %{x}<br>"      
                             "Proportion: %{y:.2f} ± %{error_y.array:.2f}<br>" 
                             "n: %{text}<br>"  # `#` column data
                             "<extra></extra>"
@@ -144,7 +144,7 @@ with tab1:
                         name='Bar with Error',
                         text=data['#'],  
                         hovertemplate=(
-                            "{by}: %{x}<br>"          
+                            f"{by}"": %{x}<br>"          
                             "Proportion: %{y:.2f} ± %{error_y.array:.2f}<br>"  
                             "n: %{text}<br>"  
                             "<extra></extra>"           
