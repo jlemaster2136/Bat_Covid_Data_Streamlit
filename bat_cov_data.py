@@ -107,12 +107,12 @@ with tab1:
                         error_y=dict(type='data', array=y_error, visible=True),
                         marker_color=color_scheme[i],
                         name=genus_list[i],
-                        text=data_genus['#'],  # Attach `#` column data for hover
+                        text=data_genus['#'], 
                         hovertemplate=(
-                            "Category: %{x}<br>"            # x-axis label
-                            "Proportion: %{y:.2f} ± %{error_y.array:.2f}<br>"  # y-value and error
+                            "{by}: %{x}<br>"      
+                            "Proportion: %{y:.2f} ± %{error_y.array:.2f}<br>" 
                             "n: %{text}<br>"  # `#` column data
-                            "<extra></extra>"                # Hides extra trace info
+                            "<extra></extra>"
                         ),
                         textposition='none',
                     )
@@ -121,7 +121,7 @@ with tab1:
             fig.update_layout(
                 title={
                     'text': f'Positive Coronavirus Samples by {by}',
-                    'x': 0.5,  # Center the title (0 is left, 0.5 is center, 1 is right)
+                    'x': 0.5,  
                     'xanchor': 'center'}, 
                 xaxis_title=by, 
                 yaxis_title="Proportion of positive samples", 
@@ -142,12 +142,12 @@ with tab1:
                         error_y=dict(type='data', array=y_error, visible=True),
                         marker_color='skyblue',
                         name='Bar with Error',
-                        text=data['#'],  # Attach `#` column data for hover
+                        text=data['#'],  
                         hovertemplate=(
-                            "Category: %{x}<br>"            # x-axis label
-                            "Proportion: %{y:.2f} ± %{error_y.array:.2f}<br>"  # y-value and error
-                            "n: %{text}<br>"  # `#` column data
-                            "<extra></extra>"                # Hides extra trace info
+                            "{by}: %{x}<br>"          
+                            "Proportion: %{y:.2f} ± %{error_y.array:.2f}<br>"  
+                            "n: %{text}<br>"  
+                            "<extra></extra>"           
                         ),
                         textposition='none',
                     )
