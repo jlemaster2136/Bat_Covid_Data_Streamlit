@@ -63,7 +63,7 @@ def by_virus_genus_and_filter(dataset, genus, filter):
     return dataset[['+', '#', 'proportion', 'prop_error']].reset_index()
 
 
-st.title('Bat Conoravirus Ecology Explorer')
+st.title('Coronavirus epidemiology explorer')
 
 #Create Streamlit tabs.
 tab1, tab2, tab3 = st.tabs(["Data Visualization", "About", "References"])
