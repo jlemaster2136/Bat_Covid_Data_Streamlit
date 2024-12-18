@@ -1,4 +1,4 @@
-# Coronavirus epidemiology explorer
+# Coronavirus ecology explorer
 
 I've created [this](https://coronavirus-bat-ecology.streamlit.app/) simple visualization tool out my curiosity for bat disease ecology. 
 
